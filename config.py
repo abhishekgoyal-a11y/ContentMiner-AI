@@ -22,7 +22,5 @@ EXTRACTED_URLS_FILE = RAW_DIR / "youtube_extracted_videos_urls.txt"
 VIDEO_DATA_FILE = RAW_DIR / "video_data.txt"
 VIDEO_DATA_CLEANED_FILE = OUTPUT_DIR / "video_data_cleaned.txt"
 TOPICS_RAW_FILE = OUTPUT_DIR / "topics_raw.txt"
-TOPICS_RANKED_FILE = OUTPUT_DIR / "topics_ranked.txt"
 
 PROMPT_TOPIC_FILE = BASE_DIR / "prompts" / "step4_topic_generator.txt"
-PROMPT_RANK_FILE = BASE_DIR / "prompts" / "step5_rank_topics.txt"

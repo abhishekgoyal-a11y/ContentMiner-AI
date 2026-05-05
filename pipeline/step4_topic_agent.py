@@ -1,7 +1,7 @@
 import subprocess
 from pathlib import Path
 import re
-from config import VIDEO_DATA_CLEANED_FILE, TOPICS_RAW_FILE, TOPICS_RANKED_FILE, PROMPT_TOPIC_FILE, PROMPT_RANK_FILE
+from config import VIDEO_DATA_CLEANED_FILE, TOPICS_RAW_FILE, PROMPT_TOPIC_FILE
 
 CLAUDE_CMD = ["claude", "--model", "sonnet"]
 

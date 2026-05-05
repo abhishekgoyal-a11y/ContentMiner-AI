@@ -1,7 +1,7 @@
 from pipeline.step1_collector import VideoCollector
 from pipeline.step2_metadata_extractor import VideoMetadataExtractor
 from pipeline.step3_cleaner import VideoDataCleaner
-from pipeline.step4_topic_agent import step4_generate_topics, step5_rank_topics
+from pipeline.step4_topic_agent import step4_generate_topics
 from config import API_KEY, CHANNELS_FILE, EXTRACTED_URLS_FILE, VIDEO_DATA_FILE, VIDEO_DATA_CLEANED_FILE
 
 
