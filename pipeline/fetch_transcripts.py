@@ -7,6 +7,9 @@ store the full transcript text in the video_transcript_file field, and rewrite t
 file to disk after each successful video (so progress survives crashes). After each success:
 random sleep 1–5s; after every 30 successes, an extra 30s pause (to ease rate limits / IP blocks).
 
+If you hit **IpBlocked** / **RequestBlocked**, see the library README on working around IP bans:
+https://github.com/jdepoix/youtube-transcript-api#working-around-ip-bans-requestblocked-or-ipblocked-exception
+
 Transcript HTTP uses TLS with certificate verification disabled (same as the former --insecure),
 because many environments fail verification against YouTube while still needing captions.
 
@@ -29,8 +32,10 @@ from urllib.parse import parse_qs, urlparse
 
 import requests
 from youtube_transcript_api import (
+    IpBlocked,
     NoTranscriptFound,
     PoTokenRequired,
+    RequestBlocked,
     TranscriptsDisabled,
     VideoUnavailable,
     YouTubeTranscriptApi,
@@ -226,6 +231,14 @@ def main() -> None:
                 print(
                     f"  PoTokenRequired for {video_id} (YouTube); skip. "
                     "See youtube-transcript-api docs for cookies/po_token.",
+                    file=sys.stderr,
+                )
+                failed += 1
+                continue
+            except (IpBlocked, RequestBlocked) as e:
+                print(
+                    f"  Blocked for {video_id} ({type(e).__name__}). "
+                    "See youtube-transcript-api README: Working around IP bans.",
                     file=sys.stderr,
                 )
                 failed += 1
