@@ -1,8 +1,10 @@
 import json
 import re
+import sys
 from pathlib import Path
 
-from config import RAW_DIR
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from config import RAW_DIR  # noqa: E402
 
 
 class VideoDataCleaner:
