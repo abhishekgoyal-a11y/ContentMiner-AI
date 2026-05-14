@@ -1,12 +1,15 @@
+import json
+from pathlib import Path
+
 import requests
-from config import API_KEY, EXTRACTED_URLS_FILE, VIDEO_DATA_FILE
+from config import API_KEY, CHANNEL_VIDEOS_JSON_NAME, RAW_DIR, VIDEO_DATA_FILE
 
 
 class VideoMetadataExtractor:
 
-    def __init__(self, api_key, input_file):
+    def __init__(self, api_key, collections_root=None):
         self.api_key = api_key
-        self.input_file = input_file
+        self.collections_root = Path(collections_root or RAW_DIR)
 
         self.base_url = "https://www.googleapis.com/youtube/v3/videos"
         self.output_file = str(VIDEO_DATA_FILE)
@@ -68,10 +71,33 @@ class VideoMetadataExtractor:
         text = " ".join(text.split())
         return text
 
-    # ---------------- INPUT FILE ----------------
+    # ---------------- INPUT (per-channel videos.json) ----------------
     def _load_urls(self):
-        with open(self.input_file, "r") as f:
-            return [line.strip() for line in f if line.strip()]
+        pattern = f"*/{CHANNEL_VIDEOS_JSON_NAME}"
+        urls = []
+        seen = set()
+
+        for path in sorted(self.collections_root.glob(pattern)):
+            try:
+                data = json.loads(path.read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, OSError):
+                continue
+
+            if not isinstance(data, list):
+                continue
+
+            for row in data:
+                if not isinstance(row, dict):
+                    continue
+                url = row.get("video_url")
+                if not url or not isinstance(url, str):
+                    continue
+                url = url.strip()
+                if url not in seen:
+                    seen.add(url)
+                    urls.append(url)
+
+        return urls
 
     def _extract_video_ids(self, urls):
         video_ids = []

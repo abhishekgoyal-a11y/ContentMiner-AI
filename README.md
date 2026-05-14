@@ -1,6 +1,6 @@
 # ContentMiner AI
 
-An automated pipeline that discovers trending AI topics from YouTube video content using Claude AI.
+An automated pipeline that collects YouTube video URLs from configured channels, fetches metadata, and produces cleaned text for downstream use.
 
 ## Project Structure
 
@@ -14,11 +14,7 @@ ContentMiner AI/
 ├── pipeline/                   # Core pipeline steps
 │   ├── step1_collector.py      # Collects URLs from YouTube channels
 │   ├── step2_metadata_extractor.py  # Fetches video metadata
-│   ├── step3_cleaner.py        # Cleans and normalizes data
-│   └── step4_topic_agent.py    # Generates and ranks AI topics
-├── prompts/                    # Claude prompts for topic generation
-│   ├── step4_topic_generator.txt
-│   └── step5_rank_topics.txt
+│   └── step3_cleaner.py        # Cleans and normalizes data
 └── data/                       # Data files (ignored by git)
     ├── input/                  # Input data (YouTube channels)
     ├── raw/                    # Intermediate processing files
@@ -50,24 +46,17 @@ The pipeline will:
 1. **Step 1**: Collect long-form videos (≥2min) from specified channels
 2. **Step 2**: Extract video metadata (title, description)
 3. **Step 3**: Clean and normalize the data
-4. **Step 4**: Use Claude to extract AI-related topics
-5. **Step 5**: Rank topics by relevance and value
 
 ## Output
 
-Results are saved in `data/output/`:
-- `topics_raw.txt` — Raw extracted topics
-- `topics_ranked.txt` — Ranked topics with scores and classifications
+Results are saved under `data/raw/` and `data/output/` as configured in `config.py`. The cleaned dataset is written to `data/output/video_data_cleaned.txt`.
 
 ## Configuration
 
 All file paths and settings are centralized in `config.py`. You can modify:
 - File paths (data directories)
 - API credentials (via `.env`)
-- Claude model selection (in `pipeline/step4_topic_agent.py`)
 
 ## Notes
 
-- Processed URLs are tracked in `data/raw/processed_urls.txt` to avoid re-processing
 - The pipeline creates data directories automatically on first run
-- Claude API calls require the `claude` CLI tool to be installed
