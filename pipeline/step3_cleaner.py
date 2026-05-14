@@ -1,84 +1,106 @@
+import json
 import re
-import os
-from config import VIDEO_DATA_FILE, VIDEO_DATA_CLEANED_FILE
+from pathlib import Path
+
+from config import RAW_DIR
 
 
 class VideoDataCleaner:
+    """
+    Walk data/raw/**/*.json (video lists). For each row, if video_transcript_file or
+    video_images_content is a non-null string, normalize it (strip URLs/hashtags/extra
+    whitespace). Cleaned values are written back as-is (including empty string).
+    Saves the same JSON file in place when any row in that file changes.
+    """
 
-    def __init__(self, input_file, output_file):
-        self.input_file = str(input_file)
-        self.output_file = str(output_file)
+    def __init__(self, collections_root=None):
+        self.collections_root = Path(collections_root or RAW_DIR)
 
-    # ---------------- MAIN ----------------
     def run(self):
-        videos = self._load_and_parse()
+        paths = self._discover_videos_json_files()
+        if not paths:
+            print(f"No video-list JSON files under {self.collections_root}")
+            return
 
-        cleaned_videos = []
+        files_changed = 0
+        rows_changed = 0
 
-        for v in videos:
-            title = self._clean_text(v.get("title", ""))
-            description = self._clean_text(v.get("description", ""))
+        for json_path in paths:
+            n, changed = self._clean_file(json_path)
+            rows_changed += n
+            if changed:
+                files_changed += 1
 
-            if title and description:
-                cleaned_videos.append({
-                    "title": title,
-                    "description": description
-                })
+        print(
+            f"\n✅ Cleaned transcript / images text on {rows_changed} field update(s) "
+            f"across {files_changed} JSON file(s) under {self.collections_root}"
+        )
 
-        self._write_output(cleaned_videos)
-
-        print(f"\n✅ Cleaned {len(cleaned_videos)} videos → {self.output_file}")
-
-        # ---------------- DELETE INPUT FILE ----------------
-        if os.path.exists(self.input_file):
-            os.remove(self.input_file)
-            print(f"🗑️ Deleted original file: {self.input_file}")
-        else:
-            print(f"⚠️ Input file not found: {self.input_file}")
-
-    # ---------------- LOAD FILE ----------------
-    def _load_and_parse(self):
-        with open(self.input_file, "r", encoding="utf-8") as f:
-            content = f.read()
-
-        videos = []
-
-        blocks = content.split("VIDEO ")
-
-        for block in blocks:
-            if not block.strip():
+    def _discover_videos_json_files(self) -> list[Path]:
+        out: list[Path] = []
+        for p in sorted(self.collections_root.rglob("*.json")):
+            try:
+                data = json.loads(p.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
                 continue
+            if not isinstance(data, list):
+                continue
+            if any(isinstance(x, dict) and x.get("video_url") for x in data):
+                out.append(p)
+        return out
 
-            title = self._extract(block, "title")
-            description = self._extract(block, "description")
-
-            if title or description:
-                videos.append({
-                    "title": title,
-                    "description": description
-                })
-
-        return videos
-
-    # ---------------- EXTRACT FIELD ----------------
-    def _extract(self, text, field):
-        match = re.search(rf"{field}:\s*(.*?)(\n|$)", text)
-        return match.group(1).strip() if match else ""
-
-    # ---------------- CLEAN TEXT ----------------
-    def _clean_text(self, text):
+    def _clean_text(self, text: str) -> str:
         if not text:
             return ""
 
-        text = re.sub(r"http\S+", "", text)   # remove URLs
-        text = re.sub(r"#\w+", "", text)      # remove hashtags
-        text = re.sub(r"\s+", " ", text)      # normalize spaces
+        text = text.replace("\ufeff", "")
+        text = re.sub(r"http\S+", "", text)
+        text = re.sub(r"#\w+", "", text)
+        text = re.sub(r"\s+", " ", text)
         return text.strip()
 
-    # ---------------- WRITE OUTPUT ----------------
-    def _write_output(self, videos):
-        with open(self.output_file, "w", encoding="utf-8") as f:
-            for i, v in enumerate(videos, 1):
-                f.write(f"VIDEO {i}:\n")
-                f.write(f"title: {v['title']}\n")
-                f.write(f"description: {v['description']}\n\n")
+    def _clean_file(self, json_path: Path) -> tuple[int, bool]:
+        try:
+            data = json.loads(json_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as e:
+            print(f"Skip {json_path}: {e}")
+            return 0, False
+
+        if not isinstance(data, list):
+            return 0, False
+
+        changed = False
+        rows_updated = 0
+
+        for row in data:
+            if not isinstance(row, dict):
+                continue
+
+            raw_t = row.get("video_transcript_file")
+            if isinstance(raw_t, str):
+                cleaned_t = self._clean_text(raw_t)
+                if cleaned_t != raw_t:
+                    row["video_transcript_file"] = cleaned_t
+                    changed = True
+                    rows_updated += 1
+
+            raw_i = row.get("video_images_content")
+            if isinstance(raw_i, str):
+                cleaned_i = self._clean_text(raw_i)
+                if cleaned_i != raw_i:
+                    row["video_images_content"] = cleaned_i
+                    changed = True
+                    rows_updated += 1
+
+        if changed:
+            json_path.write_text(
+                json.dumps(data, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+            print(f"  wrote {json_path}")
+
+        return rows_updated, changed
+
+
+if __name__ == "__main__":
+    VideoDataCleaner().run()

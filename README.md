@@ -10,10 +10,10 @@ ContentMiner AI/
 ├── .gitignore                  # Git ignore rules
 ├── requirements.txt            # Python dependencies
 ├── config.py                   # Centralized configuration and paths
-├── main.py                     # Pipeline entry point (Step 1)
+├── main.py                     # Pipeline entry point (Step 1 + Step 3)
 ├── pipeline/
 │   ├── step1_collector.py      # Collects videos into data/raw/<channel_id>/videos.json
-│   ├── step3_cleaner.py        # Legacy: cleans video_data.txt → video_data_cleaned.txt (if you create that input)
+│   ├── step3_cleaner.py        # Cleans video_transcript_file & video_images_content in videos.json
 │   ├── fetch_transcripts.py    # Fills video_transcript_file from YouTube captions
 │   └── fetch_video_images_ocr.py  # Fills video_images_content via yt-dlp + ffmpeg + Tesseract
 └── data/
@@ -38,7 +38,7 @@ ContentMiner AI/
 
 ## Running
 
-**Step 1 (collect):**
+**Pipeline (`main.py`)** — Step 1 (collect) then Step 3 (clean transcript + OCR text fields in `videos.json`):
 ```bash
 python main.py
 ```
@@ -49,10 +49,11 @@ python pipeline/fetch_transcripts.py
 python pipeline/fetch_video_images_ocr.py
 ```
 
+Run **`fetch_transcripts.py`** / **`fetch_video_images_ocr.py`** before **`main.py`** Step 3 if you want those fields cleaned; Step 3 only updates string fields that exist (it skips `null` values).
+
 ## Output
 
-- **`data/raw/<channel_id>/videos.json`** — video URL, title, placeholders / filled transcript and OCR fields
-- **`data/output/video_data_cleaned.txt`** — only if you run `step3_cleaner.py` with a suitable `data/raw/video_data.txt` input
+- **`data/raw/<channel_id>/videos.json`** — Step 1 fills rows; optional fetch scripts fill transcript/OCR; Step 3 rewrites `video_transcript_file` / `video_images_content` in place when they change after cleaning
 
 ## Configuration
 

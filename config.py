@@ -18,5 +18,3 @@ for dir_path in [INPUT_DIR, RAW_DIR, OUTPUT_DIR]:
 
 CHANNELS_FILE = INPUT_DIR / "channels.txt"
 CHANNEL_VIDEOS_JSON_NAME = "videos.json"
-VIDEO_DATA_FILE = RAW_DIR / "video_data.txt"
-VIDEO_DATA_CLEANED_FILE = OUTPUT_DIR / "video_data_cleaned.txt"
