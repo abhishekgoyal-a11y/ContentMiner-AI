@@ -1,6 +1,6 @@
 # ContentMiner AI
 
-An automated pipeline that discovers trending AI topics from YouTube video content using Claude AI.
+An automated pipeline that collects YouTube video URLs from configured channels into per-channel `videos.json`, with optional scripts to pull captions and frame OCR text.
 
 ## Project Structure
 
@@ -10,19 +10,16 @@ ContentMiner AI/
 ├── .gitignore                  # Git ignore rules
 ├── requirements.txt            # Python dependencies
 ├── config.py                   # Centralized configuration and paths
-├── main.py                     # Pipeline entry point
-├── pipeline/                   # Core pipeline steps
-│   ├── step1_collector.py      # Collects URLs from YouTube channels
-│   ├── step2_metadata_extractor.py  # Fetches video metadata
-│   ├── step3_cleaner.py        # Cleans and normalizes data
-│   └── step4_topic_agent.py    # Generates and ranks AI topics
-├── prompts/                    # Claude prompts for topic generation
-│   ├── step4_topic_generator.txt
-│   └── step5_rank_topics.txt
-└── data/                       # Data files (ignored by git)
-    ├── input/                  # Input data (YouTube channels)
-    ├── raw/                    # Intermediate processing files
-    └── output/                 # Final outputs
+├── main.py                     # Pipeline entry point (Step 1 + Step 3)
+├── pipeline/
+│   ├── step1_collector.py      # Collects videos into data/raw/<channel_id>/videos.json
+│   ├── step3_cleaner.py        # Cleans video_transcript_file & video_images_content in videos.json
+│   ├── fetch_transcripts.py    # Fills video_transcript_file from YouTube captions
+│   └── fetch_video_images_ocr.py  # Fills video_images_content via yt-dlp + ffmpeg + Tesseract
+└── data/
+    ├── input/
+    ├── raw/
+    └── output/
 ```
 
 ## Setup
@@ -33,41 +30,36 @@ ContentMiner AI/
    ```
 
 2. **Configure API key:**
-   - The `.env` file is already set up with your YouTube API key
+   - The `.env` file should define `YOUTUBE_API_KEY` for Step 1 (YouTube Data API)
    - Keep `.env` private and never commit it to git
 
 3. **Add YouTube channels:**
-   - Edit `data/input/channels.txt` to add YouTube channel URLs
-   - Format: one URL per line (e.g., `https://www.youtube.com/@ChannelName`)
+   - Edit `data/input/channels.txt` — one channel URL per line
 
-## Running the Pipeline
+## Running
 
+**Pipeline (`main.py`)** — Step 1 (collect) then Step 3 (clean transcript + OCR text fields in `videos.json`):
 ```bash
 python main.py
 ```
 
-The pipeline will:
-1. **Step 1**: Collect long-form videos (≥2min) from specified channels
-2. **Step 2**: Extract video metadata (title, description)
-3. **Step 3**: Clean and normalize the data
-4. **Step 4**: Use Claude to extract AI-related topics
-5. **Step 5**: Rank topics by relevance and value
+**Optional — transcripts / OCR** (see script docstrings; need extra system tools for OCR):
+```bash
+python pipeline/fetch_transcripts.py
+python pipeline/fetch_video_images_ocr.py
+```
+
+Run **`fetch_transcripts.py`** / **`fetch_video_images_ocr.py`** before **`main.py`** Step 3 if you want those fields cleaned; Step 3 only updates string fields that exist (it skips `null` values).
 
 ## Output
 
-Results are saved in `data/output/`:
-- `topics_raw.txt` — Raw extracted topics
-- `topics_ranked.txt` — Ranked topics with scores and classifications
+- **`data/raw/<channel_id>/videos.json`** — Step 1 fills rows; optional fetch scripts fill transcript/OCR; Step 3 rewrites `video_transcript_file` / `video_images_content` in place when they change after cleaning
 
 ## Configuration
 
-All file paths and settings are centralized in `config.py`. You can modify:
-- File paths (data directories)
-- API credentials (via `.env`)
-- Claude model selection (in `pipeline/step4_topic_agent.py`)
+Paths and env loading are in `config.py`.
 
 ## Notes
 
-- Processed URLs are tracked in `data/raw/processed_urls.txt` to avoid re-processing
-- The pipeline creates data directories automatically on first run
-- Claude API calls require the `claude` CLI tool to be installed
+- Processed URLs are tracked in `data/raw/processed_urls.txt`
+- Data directories are created on first run

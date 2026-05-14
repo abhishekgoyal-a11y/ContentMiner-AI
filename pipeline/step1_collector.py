@@ -1,6 +1,14 @@
+import json
 import requests
 import re
-from config import API_KEY, CHANNELS_FILE, PROCESSED_URLS_FILE, EXTRACTED_URLS_FILE
+from pathlib import Path
+
+from config import (
+    API_KEY,
+    CHANNELS_FILE,
+    CHANNEL_VIDEOS_JSON_NAME,
+    RAW_DIR,
+)
 
 
 class VideoCollector:
@@ -13,44 +21,52 @@ class VideoCollector:
         self.base_playlist_url = "https://www.googleapis.com/youtube/v3/playlistItems"
         self.base_video_url = "https://www.googleapis.com/youtube/v3/videos"
 
-        self.output_file = str(EXTRACTED_URLS_FILE)
-        self.processed_file = str(PROCESSED_URLS_FILE)
-
     # ---------------- PUBLIC METHOD ----------------
     def collect_urls(self):
         channel_ids = self._get_channel_ids()
-        processed_urls = self._load_processed_urls()
 
         all_new_urls = []
+        total_appended = 0
 
         for channel_id in channel_ids:
+
+            channel_dir = Path(RAW_DIR) / channel_id
+            channel_dir.mkdir(parents=True, exist_ok=True)
+
+            videos_path = channel_dir / CHANNEL_VIDEOS_JSON_NAME
+            if not videos_path.exists():
+                videos_path.write_text("[]", encoding="utf-8")
 
             uploads_playlist = self._get_uploads_playlist(channel_id)
             video_ids = self._get_video_ids_from_playlist(uploads_playlist)
 
-            long_videos = self._filter_by_duration(video_ids)
+            long_videos = self._long_videos_with_titles(video_ids)
 
-            final_videos = []
+            new_entries = []
 
-            for vid in long_videos:
+            for vid, title in long_videos:
                 url = f"https://www.youtube.com/watch?v={vid}"
 
-                if url in processed_urls:
-                    continue
+                new_entries.append({
+                    "video_url": url,
+                    "video_title": title,
+                    "video_transcript_file": None,
+                    "video_images_content": None,
+                })
 
-                final_videos.append(url)
+            print(f"{channel_id}: {len(new_entries)} videos (>=2min)")
 
-                if len(final_videos) >= 30:
-                    break
+            if new_entries:
+                total_appended += self._append_new_entries_to_videos_json(
+                    channel_id, new_entries
+                )
 
-            print(f"{channel_id}: {len(final_videos)} videos (>=2min, new)")
+            all_new_urls.extend(e["video_url"] for e in new_entries)
 
-            all_new_urls.extend(final_videos)
-
-        self._save_urls(all_new_urls)
-        self._save_processed_urls(all_new_urls)
-
-        print(f"\nSaved {len(all_new_urls)} URLs to {self.output_file}")
+        print(
+            f"\nAppended {total_appended} new video records "
+            f"({len(all_new_urls)} long videos scanned) under {RAW_DIR}"
+        )
         return all_new_urls
 
     # ---------------- CHANNEL HANDLING ----------------
@@ -131,9 +147,9 @@ class VideoCollector:
 
         return video_ids
 
-    # ---------------- DURATION FILTER ----------------
-    def _filter_by_duration(self, video_ids):
-        valid_videos = []
+    # ---------------- DURATION FILTER + TITLES ----------------
+    def _long_videos_with_titles(self, video_ids):
+        results = []
 
         for i in range(0, len(video_ids), 50):
             batch = video_ids[i:i + 50]
@@ -141,7 +157,7 @@ class VideoCollector:
             params = {
                 "key": self.api_key,
                 "id": ",".join(batch),
-                "part": "contentDetails"
+                "part": "snippet,contentDetails"
             }
 
             res = requests.get(self.base_video_url, params=params)
@@ -154,9 +170,10 @@ class VideoCollector:
                 seconds = self._parse_duration(duration)
 
                 if seconds >= 120:
-                    valid_videos.append(vid)
+                    title = item.get("snippet", {}).get("title", "").strip()
+                    results.append((vid, title))
 
-        return valid_videos
+        return results
 
     # ---------------- DURATION PARSER ----------------
     def _parse_duration(self, duration):
@@ -173,19 +190,43 @@ class VideoCollector:
         return hours * 3600 + minutes * 60 + seconds
 
     # ---------------- FILE HANDLING ----------------
-    def _load_processed_urls(self):
-        try:
-            with open(self.processed_file, "r") as f:
-                return set(line.strip() for line in f if line.strip())
-        except FileNotFoundError:
-            return set()
+    def _append_new_entries_to_videos_json(self, channel_id, new_entries):
+        """
+        RAW_DIR/<channel_id>/ exists before this is called.
+        If videos.json is missing, create it. If it exists, load current
+        array and append only rows with new video_url; never remove or
+        rewrite existing objects.
+        """
+        channel_dir = Path(RAW_DIR) / channel_id
+        out_path = channel_dir / CHANNEL_VIDEOS_JSON_NAME
 
-    def _save_urls(self, urls):
-        with open(self.output_file, "w") as f:
-            for url in urls:
-                f.write(url + "\n")
+        existing = []
+        if out_path.exists():
+            try:
+                raw = json.loads(out_path.read_text(encoding="utf-8"))
+                if isinstance(raw, list):
+                    existing = [row for row in raw if isinstance(row, dict)]
+            except json.JSONDecodeError:
+                existing = []
 
-    def _save_processed_urls(self, urls):
-        with open(self.processed_file, "a") as f:
-            for url in urls:
-                f.write(url + "\n")
+        seen = {
+            row["video_url"]
+            for row in existing
+            if row.get("video_url")
+        }
+
+        appended = 0
+        for row in new_entries:
+            url = row["video_url"]
+            if url not in seen:
+                seen.add(url)
+                existing.append(row)
+                appended += 1
+
+        out_path.write_text(
+            json.dumps(existing, indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+
+        print(f"  → {out_path}")
+        return appended
