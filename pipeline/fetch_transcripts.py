@@ -5,7 +5,7 @@ with video_transcript_file == null,
 fetch captions via youtube-transcript-api (same approach as YoutubeScraper/transcript_cli.py),
 store the full transcript text in the video_transcript_file field, and rewrite that JSON
 file to disk after each successful video (so progress survives crashes). After each success:
-random sleep 1–5s; after every 30 successes, an extra 30s pause (to ease rate limits / IP blocks).
+random sleep 5–10s; after every 10 successes, an extra 60s (1 min) pause (to ease rate limits / IP blocks).
 
 If you hit **IpBlocked** / **RequestBlocked**, see the library README on working around IP bans:
 https://github.com/jdepoix/youtube-transcript-api#working-around-ip-bans-requestblocked-or-ipblocked-exception
@@ -45,10 +45,10 @@ from youtube_transcript_api import (
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import RAW_DIR  # noqa: E402
 
-MIN_DELAY_SEC = 1.0
-MAX_DELAY_SEC = 5.0
-BATCH_SIZE = 30
-BATCH_PAUSE_SEC = 30.0
+MIN_DELAY_SEC = 5.0
+MAX_DELAY_SEC = 10.0
+BATCH_SIZE = 10
+BATCH_PAUSE_SEC = 60.0
 
 
 def build_http_session() -> requests.Session:
@@ -259,7 +259,7 @@ def main() -> None:
 
             if done % BATCH_SIZE == 0:
                 print(
-                    f"  batch pause {BATCH_PAUSE_SEC:.0f}s after {done} successful transcript(s)",
+                    f"  batch pause {BATCH_PAUSE_SEC:.0f}s (1 min) after {done} successful transcript(s)",
                     flush=True,
                 )
                 time.sleep(BATCH_PAUSE_SEC)
