@@ -2,3 +2,6 @@ requests
 python-dotenv
 youtube-transcript-api
 certifi
+pillow
+pytesseract
+tqdm
