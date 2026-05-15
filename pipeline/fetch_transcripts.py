@@ -260,9 +260,15 @@ def main() -> None:
                 failed += 1
                 continue
 
-            row["video_transcript_file"] = text.strip()
+            transcript_text = text.strip()
+            transcripts_dir = json_path.parent / "transcripts"
+            transcripts_dir.mkdir(parents=True, exist_ok=True)
+            transcript_path = transcripts_dir / f"{video_id}.txt"
+            transcript_path.write_text(transcript_text, encoding="utf-8")
+
+            row["video_transcript_file"] = f"transcripts/{video_id}.txt"
             done += 1
-            n = len(row["video_transcript_file"])
+            n = len(transcript_text)
             json_path.write_text(
                 json.dumps(data, indent=2, ensure_ascii=False) + "\n",
                 encoding="utf-8",

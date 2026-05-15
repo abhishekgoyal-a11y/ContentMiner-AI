@@ -1,9 +1,11 @@
 import json
+import sys
 import requests
 import re
 from pathlib import Path
 
-from config import (
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from config import (  # noqa: E402
     API_KEY,
     CHANNELS_FILE,
     CHANNEL_VIDEOS_JSON_NAME,
@@ -52,6 +54,7 @@ class VideoCollector:
                     "video_title": title,
                     "video_transcript_file": None,
                     "video_images_content": None,
+                    "article_written": None,
                 })
 
             print(f"{channel_id}: {len(new_entries)} videos (>=2min)")
@@ -230,3 +233,7 @@ class VideoCollector:
 
         print(f"  → {out_path}")
         return appended
+
+
+if __name__ == "__main__":
+    VideoCollector(API_KEY, CHANNELS_FILE).collect_urls()
