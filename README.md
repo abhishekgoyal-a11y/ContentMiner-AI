@@ -14,12 +14,11 @@ ContentMiner AI/
 ├── pipeline/
 │   ├── step1_collector.py      # Collects videos into data/raw/<channel_id>/videos.json
 │   ├── step3_cleaner.py        # Cleans video_transcript_file & video_images_content in videos.json
-│   ├── fetch_transcripts.py    # Fills video_transcript_file from YouTube captions
+│   ├── fetch_transcripts.py    # Fills video_transcript_file via yt-dlp audio + faster-whisper
 │   └── fetch_video_images_ocr.py  # Fills video_images_content via yt-dlp + ffmpeg + Tesseract
 └── data/
     ├── input/
-    ├── raw/
-    └── output/
+    └── raw/
 ```
 
 ## Setup

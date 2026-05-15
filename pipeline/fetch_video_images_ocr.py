@@ -298,14 +298,20 @@ def main() -> None:
                 failed += 1
                 continue
 
-            row["video_images_content"] = combined.strip()
+            ocr_text = combined.strip()
+            images_ocr_dir = json_path.parent / "images_ocr"
+            images_ocr_dir.mkdir(parents=True, exist_ok=True)
+            ocr_path = images_ocr_dir / f"{video_id}.txt"
+            ocr_path.write_text(ocr_text, encoding="utf-8")
+
+            row["video_images_content"] = f"images_ocr/{video_id}.txt"
             done += 1
-            n = len(row["video_images_content"])
+            n = len(ocr_text)
             json_path.write_text(
                 json.dumps(data, indent=2, ensure_ascii=False) + "\n",
                 encoding="utf-8",
             )
-            print(f"OK {video_id} → stored video_images_content ({n} chars), saved {json_path}")
+            print(f"OK {video_id} → wrote {ocr_path} ({n} chars), saved {json_path}")
 
             # --- post-success pacing (disabled for now) ---
             # gap = random.uniform(MIN_DELAY_SEC, MAX_DELAY_SEC)
