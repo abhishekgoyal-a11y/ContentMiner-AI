@@ -168,7 +168,10 @@ class VideoCollector:
 
             for item in data.get("items", []):
                 vid = item["id"]
-                duration = item["contentDetails"]["duration"]
+                # Live / upcoming broadcasts omit duration until VOD exists (API behavior).
+                duration = (item.get("contentDetails") or {}).get("duration")
+                if not duration:
+                    continue
 
                 seconds = self._parse_duration(duration)
 
