@@ -1,21 +1,25 @@
 #!/usr/bin/env python3
 """
 Walk data/raw/**/*.json for lists of video rows (must include video_url), find rows
-with video_transcript_file == null,
-fetch captions via youtube-transcript-api (same approach as YoutubeScraper/transcript_cli.py),
-store the full transcript text in the video_transcript_file field, and rewrite that JSON
-file to disk after each successful video (so progress survives crashes). After each success:
-random sleep 5–10s; after every 10 successes, an extra 60s (1 min) pause (to ease rate limits / IP blocks).
+with video_transcript_file == null, download each video's audio with yt-dlp and
+transcribe it locally with faster-whisper, store the full transcript text in the
+video_transcript_file field, and rewrite that JSON file to disk after each
+successful video (so progress survives crashes). After each success: random
+sleep 5–10s; after every 10 successes, an extra 60s (1 min) pause (to ease
+rate limits during audio downloads).
 
-If you hit **IpBlocked** / **RequestBlocked**, see the library README on working around IP bans:
-https://github.com/jdepoix/youtube-transcript-api#working-around-ip-bans-requestblocked-or-ipblocked-exception
+Works on videos with captions disabled and on auto-caption-poor languages.
+Trade-off: slower than caption scraping, and needs a Whisper model downloaded
+on first run (cached under ~/.cache/huggingface/).
 
-Transcript HTTP uses TLS with certificate verification disabled (same as the former --insecure),
-because many environments fail verification against YouTube while still needing captions.
+Requires:
+    pip install yt-dlp faster-whisper
+    ffmpeg on PATH
 
 Run from project root:
   python pipeline/fetch_transcripts.py
-  python pipeline/fetch_transcripts.py --lang hi --lang en
+  python pipeline/fetch_transcripts.py --model small
+  python pipeline/fetch_transcripts.py --lang en
   python pipeline/fetch_transcripts.py --limit 5
 """
 
@@ -26,20 +30,14 @@ import json
 import random
 import re
 import sys
+import tempfile
 import time
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
-import requests
-from youtube_transcript_api import (
-    IpBlocked,
-    NoTranscriptFound,
-    PoTokenRequired,
-    RequestBlocked,
-    TranscriptsDisabled,
-    VideoUnavailable,
-    YouTubeTranscriptApi,
-)
+from faster_whisper import WhisperModel
+from yt_dlp import YoutubeDL
+from yt_dlp.utils import DownloadError
 
 # Project imports when run as `python pipeline/fetch_transcripts.py` from repo root
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -49,20 +47,6 @@ MIN_DELAY_SEC = 5.0
 MAX_DELAY_SEC = 10.0
 BATCH_SIZE = 10
 BATCH_PAUSE_SEC = 60.0
-
-
-def build_http_session() -> requests.Session:
-    """Session for YouTube transcript HTTP: verify=False (avoids common CA/TLS failures)."""
-    import urllib3
-
-    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-    session = requests.Session()
-    session.verify = False
-    return session
-
-
-def make_transcript_api(session: requests.Session) -> YouTubeTranscriptApi:
-    return YouTubeTranscriptApi(http_client=session)
 
 
 def extract_video_id(url_or_id: str) -> str:
@@ -93,27 +77,47 @@ def extract_video_id(url_or_id: str) -> str:
     raise ValueError(f"Could not parse YouTube video id from: {url_or_id!r}")
 
 
-def fetch_transcript_text(
-    api: YouTubeTranscriptApi,
-    video_id: str,
-    languages: list[str] | None,
-) -> str:
-    if languages:
-        fetched = api.fetch(video_id, languages=languages)
-    else:
-        try:
-            fetched = api.fetch(video_id, languages=["en"])
-        except NoTranscriptFound:
-            transcript_list = api.list(video_id)
-            first = next(iter(transcript_list))
-            fetched = first.fetch()
+def download_audio(url: str, tmpdir: Path) -> Path:
+    opts = {
+        "format": "bestaudio/best",
+        "outtmpl": str(tmpdir / "%(id)s.%(ext)s"),
+        "postprocessors": [
+            {"key": "FFmpegExtractAudio", "preferredcodec": "mp3", "preferredquality": "0"}
+        ],
+        "quiet": True,
+        "no_warnings": True,
+        "nocheckcertificate": True,
+    }
+    with YoutubeDL(opts) as ydl:
+        info = ydl.extract_info(url, download=True)
+    return tmpdir / f"{info['id']}.mp3"
 
-    lines: list[str] = []
-    for snippet in fetched:
-        text = (snippet.text or "").replace("\n", " ").strip()
-        if text:
-            lines.append(text)
-    return " ".join(lines)
+
+def transcribe_audio(
+    model: WhisperModel,
+    audio_path: Path,
+    language: str | None,
+    progress_prefix: str = "",
+    progress_every_sec: float = 15.0,
+) -> str:
+    segments, info = model.transcribe(str(audio_path), language=language, vad_filter=True)
+    duration = float(getattr(info, "duration", 0.0) or 0.0)
+    parts: list[str] = []
+    last_log = time.monotonic()
+    for seg in segments:
+        txt = (seg.text or "").strip()
+        if txt:
+            parts.append(txt)
+        now = time.monotonic()
+        if now - last_log >= progress_every_sec:
+            pos = float(getattr(seg, "end", 0.0) or 0.0)
+            pct = (pos / duration * 100) if duration > 0 else 0.0
+            print(
+                f"{progress_prefix}    ...transcribed {pos:.0f}/{duration:.0f}s ({pct:.0f}%)",
+                flush=True,
+            )
+            last_log = now
+    return " ".join(parts)
 
 
 def discover_videos_json_files() -> list[Path]:
@@ -139,16 +143,44 @@ def needs_transcript(row: dict) -> bool:
     return row.get("video_transcript_file") is None
 
 
+def count_pending(paths: list[Path]) -> int:
+    n = 0
+    for p in paths:
+        try:
+            data = json.loads(p.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if isinstance(data, list):
+            n += sum(1 for r in data if needs_transcript(r))
+    return n
+
+
+def fmt_eta(seconds: float) -> str:
+    s = int(seconds)
+    h, s = divmod(s, 3600)
+    m, s = divmod(s, 60)
+    if h:
+        return f"{h}h{m:02d}m"
+    if m:
+        return f"{m}m{s:02d}s"
+    return f"{s}s"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Set video_transcript_file to caption text for rows under data/raw/"
+        description="Set video_transcript_file to Whisper-transcribed text for rows under data/raw/"
+    )
+    parser.add_argument(
+        "--model",
+        default="base",
+        help="faster-whisper model size (default: base). Options: tiny, base, small, medium, large-v3",
     )
     parser.add_argument(
         "--lang",
-        action="append",
-        dest="languages",
+        dest="language",
+        default=None,
         metavar="CODE",
-        help="Caption language priority (repeatable), e.g. en, hi",
+        help="Force a language code for transcription, e.g. en, hi (default: auto-detect)",
     )
     parser.add_argument(
         "--limit",
@@ -164,9 +196,20 @@ def main() -> None:
         print(f"No usable video-list JSON files under {RAW_DIR}", file=sys.stderr)
         raise SystemExit(1)
 
-    session = build_http_session()
-    api = make_transcript_api(session)
+    total_pending = count_pending(paths)
+    target = min(args.limit, total_pending) if args.limit else total_pending
+    print(
+        f"Found {total_pending} video(s) needing transcript across {len(paths)} JSON file(s)"
+        + (f"; processing up to {target} (--limit)" if args.limit else ""),
+        flush=True,
+    )
 
+    print(f"Loading faster-whisper model: {args.model} ...", file=sys.stderr)
+    t_model = time.monotonic()
+    model = WhisperModel(args.model, device="auto", compute_type="auto")
+    print(f"Model loaded in {time.monotonic() - t_model:.1f}s", file=sys.stderr)
+
+    run_start = time.monotonic()
     done = 0
     failed = 0
     stop = False
@@ -203,44 +246,17 @@ def main() -> None:
                 failed += 1
                 continue
 
+            prefix = f"[{attempted}/{target}] {video_id}"
+            t0 = time.monotonic()
             try:
-                text = fetch_transcript_text(api, video_id, args.languages)
-            except requests.exceptions.SSLError:
-                print(
-                    f"  TLS error for {video_id} (unexpected with verify disabled).",
-                    file=sys.stderr,
-                )
-                failed += 1
-                continue
-            except TranscriptsDisabled:
-                print(f"  Transcripts disabled: {video_id}", file=sys.stderr)
-                failed += 1
-                continue
-            except VideoUnavailable:
-                print(f"  Video unavailable: {video_id}", file=sys.stderr)
-                failed += 1
-                continue
-            except NoTranscriptFound:
-                print(
-                    f"  No transcript: {video_id} (try --lang)",
-                    file=sys.stderr,
-                )
-                failed += 1
-                continue
-            except PoTokenRequired:
-                print(
-                    f"  PoTokenRequired for {video_id} (YouTube); skip. "
-                    "See youtube-transcript-api docs for cookies/po_token.",
-                    file=sys.stderr,
-                )
-                failed += 1
-                continue
-            except (IpBlocked, RequestBlocked) as e:
-                print(
-                    f"  Blocked for {video_id} ({type(e).__name__}). "
-                    "See youtube-transcript-api README: Working around IP bans.",
-                    file=sys.stderr,
-                )
+                with tempfile.TemporaryDirectory() as td:
+                    print(f"{prefix}  download...", flush=True)
+                    audio = download_audio(url, Path(td))
+                    t_dl = time.monotonic() - t0
+                    print(f"{prefix}  transcribe ({args.model})... [audio {t_dl:.0f}s]", flush=True)
+                    text = transcribe_audio(model, audio, args.language, progress_prefix=prefix)
+            except DownloadError as e:
+                print(f"{prefix}  yt-dlp failed: {e}", file=sys.stderr)
                 failed += 1
                 continue
 
@@ -251,20 +267,27 @@ def main() -> None:
                 json.dumps(data, indent=2, ensure_ascii=False) + "\n",
                 encoding="utf-8",
             )
-            print(f"OK {video_id} → stored transcript ({n} chars), saved {json_path}")
+
+            elapsed = time.monotonic() - t0
+            avg = (time.monotonic() - run_start) / done
+            eta = fmt_eta(avg * (target - done))
+            print(
+                f"{prefix}  OK {n}ch in {elapsed:.0f}s | avg {avg:.0f}s | ETA {eta} | {json_path.name}",
+                flush=True,
+            )
 
             gap = random.uniform(MIN_DELAY_SEC, MAX_DELAY_SEC)
             time.sleep(gap)
-            print(f"  waited {gap:.1f}s (random {MIN_DELAY_SEC:.0f}–{MAX_DELAY_SEC:.0f}s)", flush=True)
 
             if done % BATCH_SIZE == 0:
                 print(
-                    f"  batch pause {BATCH_PAUSE_SEC:.0f}s (1 min) after {done} successful transcript(s)",
+                    f"  batch pause {BATCH_PAUSE_SEC:.0f}s after {done} successful transcript(s)",
                     flush=True,
                 )
                 time.sleep(BATCH_PAUSE_SEC)
 
-    print(f"\nTranscripts written: {done}, failures: {failed}")
+    total_elapsed = fmt_eta(time.monotonic() - run_start)
+    print(f"\nTranscripts written: {done}, failures: {failed}, time: {total_elapsed}")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,7 @@
 requests
 python-dotenv
-youtube-transcript-api
+yt-dlp
+faster-whisper
 certifi
 pillow
 pytesseract
