@@ -4527,5 +4527,12 @@
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
+  },
+  {
+    "video_url": "https://www.youtube.com/watch?v=UEm0mHeXdxk",
+    "video_title": "02 Complete local setup to learn Redis",
+    "video_transcript_file": null,
+    "video_images_content": null,
+    "article_written": null
   }
 ]

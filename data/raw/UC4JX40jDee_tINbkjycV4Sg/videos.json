@@ -142,42 +142,42 @@
   {
     "video_url": "https://www.youtube.com/watch?v=jsy3m7Emkr0",
     "video_title": "How to Setup AI Agent Skills for Better Code | TRAE SOLO",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/jsy3m7Emkr0.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=uogzSxOw4LU",
     "video_title": "The Ultimate Claude Code Guide | MCP, Skills & More",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/uogzSxOw4LU.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=GAyNvq6Ayps",
     "video_title": "Running LLMs Locally Just Got Way Better - Ollama + MCP",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/GAyNvq6Ayps.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=RDUGbxslOcM",
     "video_title": "Anthropic Just Broke Software Forever",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/RDUGbxslOcM.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=GtTJ6LcqdCE",
     "video_title": "The Claude Code Situation",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/GtTJ6LcqdCE.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=w-X3HV2OTfM",
     "video_title": "50x Cheaper Than Claude - But Can It Actually Code?",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/w-X3HV2OTfM.txt",
     "video_images_content": null,
     "article_written": null
   },
