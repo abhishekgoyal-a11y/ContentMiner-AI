@@ -130,91 +130,91 @@
     "video_title": "Learn Claude before it replace you | Master Claude From Scratch | AI for Everyone: Session 1",
     "video_transcript_file": "transcripts/7FruOP4Vybg.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=ghPb2T0ygSE",
     "video_title": "Learn Agentic AI in 2026 With These 7 Steps",
     "video_transcript_file": "transcripts/ghPb2T0ygSE.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=nkbtOplq9jM",
     "video_title": "Vectorless RAG Tutorial With PageIndex-No VectorDB And Chunking Required",
     "video_transcript_file": "transcripts/nkbtOplq9jM.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=cbMP6G0EE7c",
     "video_title": "Why Oracle Laid Off 30k Employees Despite Strong Revenue Growth",
     "video_transcript_file": "transcripts/cbMP6G0EE7c.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=Gpjcocrq5GE",
     "video_title": "Deploy Openclaw In Cloud",
     "video_transcript_file": "transcripts/Gpjcocrq5GE.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=gUxf1DhRzs4",
     "video_title": "Build Your Own Private Assistant With OpenClaw And Ollama",
     "video_transcript_file": "transcripts/gUxf1DhRzs4.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=cI8Qc2emky4",
     "video_title": "Modern Route Generative And Agentic AI Induction Session",
     "video_transcript_file": "transcripts/cI8Qc2emky4.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=uaRKRE8oDZ4",
     "video_title": "AI Learning Path  For 2026- Data Science, Generative and Agentic AI Roadmap",
     "video_transcript_file": "transcripts/uaRKRE8oDZ4.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=ruiLq0OzjkI",
     "video_title": "Guardrails with LangChain: A Complete Crash Course for Building Safe AI Agents",
     "video_transcript_file": "transcripts/ruiLq0OzjkI.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=NebOSOTp-zA",
     "video_title": "Mastering LLM Chatbots And RAG Evaluation Crash Course",
     "video_transcript_file": "transcripts/NebOSOTp-zA.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=5p30SwHCa-M",
     "video_title": "Testing Sarvam AI Conversation Agent and Its Amazing",
     "video_transcript_file": "transcripts/5p30SwHCa-M.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=kFGCyVTAn50",
     "video_title": "How To Learn AI Using Modern Route- Full stack Generative And Agentic AI Bootcamp Announcement",
     "video_transcript_file": "transcripts/kFGCyVTAn50.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=TVJDMclNUfY",
     "video_title": "Live Day 4- Modern Route Building AI Agents For Production",
     "video_transcript_file": "transcripts/TVJDMclNUfY.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=T9Ddh_Mjma0",
@@ -701,7 +701,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=q_-FFcknQn0",
-    "video_title": "We Are Turning 1\ud83c\udf89 !!",
+    "video_title": "We Are Turning 1🎉 !!",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -729,7 +729,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=Au33D-gUpu0",
-    "video_title": "Amazon Developer Q CLI \u2728Your AI Coding Partner From Terminal",
+    "video_title": "Amazon Developer Q CLI ✨Your AI Coding Partner From Terminal",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -1415,7 +1415,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=wo6KvQdF7Js",
-    "video_title": "Try Krish AI Chatbot \ud83d\ude0e- Get Help For Everything With Videos",
+    "video_title": "Try Krish AI Chatbot 😎- Get Help For Everything With Videos",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -2073,7 +2073,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=rHphpyf0i0I",
-    "video_title": "Groq-LPU\u2122 Inference Engine Better Than OpenAI Chatgpt And Nvidia",
+    "video_title": "Groq-LPU™ Inference Engine Better Than OpenAI Chatgpt And Nvidia",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -3095,7 +3095,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=tv7rn5AsxFY",
-    "video_title": "Build Python LLM apps in minutes Using Chainlit \u26a1\ufe0f",
+    "video_title": "Build Python LLM apps in minutes Using Chainlit ⚡️",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -3599,7 +3599,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=Pr_lgM4Yqb4",
-    "video_title": "Don't Panic While Learning Data Science\ud83d\ude28\ud83d\ude28\ud83d\ude28\ud83d\ude28",
+    "video_title": "Don't Panic While Learning Data Science😨😨😨😨",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -3613,7 +3613,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=39JpUMAJHCQ",
-    "video_title": "I have Become A Recording Machine For Data Science \ud83d\ude0e\ud83d\ude0e\ud83d\ude0e\ud83d\ude0e",
+    "video_title": "I have Become A Recording Machine For Data Science 😎😎😎😎",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -3641,7 +3641,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=5iIED6SdeFk",
-    "video_title": "Scikit-Learn and Hugging Face Bhai Bhai\ud83d\udc6c\ud83d\udc6c",
+    "video_title": "Scikit-Learn and Hugging Face Bhai Bhai👬👬",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -3676,7 +3676,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=KEU-uoI0zRw",
-    "video_title": "@GitHub Sent Me These Amazing Gifts As A Github Star \ud83c\udf1f",
+    "video_title": "@GitHub Sent Me These Amazing Gifts As A Github Star 🌟",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -3697,7 +3697,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=s-IYcL9iQ3M",
-    "video_title": "Navaratri Celebration In iNeuron\ud83d\ude07\ud83d\ude07",
+    "video_title": "Navaratri Celebration In iNeuron😇😇",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -4565,7 +4565,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=UkqrrP2jzgI",
-    "video_title": "3D Prinitng Demo To Create Drone Components\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "3D Prinitng Demo To Create Drone Components🔥🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -4922,7 +4922,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=MVK84M18wt4",
-    "video_title": "I Searched Myself In Google And Youtube And The Suggestions Is \ud83d\ude0d\ud83d\ude0d\ud83d\ude0d\ud83d\ude0d",
+    "video_title": "I Searched Myself In Google And Youtube And The Suggestions Is 😍😍😍😍",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -5062,7 +5062,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=k6NJlxw8eDg",
-    "video_title": "@GitHub Sent Me This Gift- Github Star Awards\u2b50\u2b50\u2b50\u2b50",
+    "video_title": "@GitHub Sent Me This Gift- Github Star Awards⭐⭐⭐⭐",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -5307,7 +5307,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=I5VE2dHeKGE",
-    "video_title": "Python \u2013 Different Ways To Import Module From Different Directory",
+    "video_title": "Python – Different Ways To Import Module From Different Directory",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -5391,14 +5391,14 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=N_rlMjuyNj8",
-    "video_title": "iNeuron Projectathon 2021- Win Amazing Cash Rewards\ud83d\udcb0\ud83d\udcb0\ud83d\udcb0\ud83d\udcb0",
+    "video_title": "iNeuron Projectathon 2021- Win Amazing Cash Rewards💰💰💰💰",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=kRQWh7IHHC8",
-    "video_title": "What Can You Learn From Internships?\ud83e\udd29\ud83e\udd29\ud83e\udd29\ud83e\udd29",
+    "video_title": "What Can You Learn From Internships?🤩🤩🤩🤩",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -5510,7 +5510,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=SOOS7tN0nHg",
-    "video_title": "What\u2019s New In Python 3.10? Discussing All The New Features",
+    "video_title": "What’s New In Python 3.10? Discussing All The New Features",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -5748,7 +5748,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=CmcZVY2bYbo",
-    "video_title": "Work Is More Important Than Role- Focus More On The Work\u2b50\u2b50\u2b50\u2b50",
+    "video_title": "Work Is More Important Than Role- Focus More On The Work⭐⭐⭐⭐",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -5762,21 +5762,21 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=OW3KEgyvitc",
-    "video_title": "Clean, Analyze, Visualize And Perform EDA With Klib Library In No Time \ufe0f\u200d\ud83d\udd25\ufe0f\u200d\ud83d\udd25\ufe0f\u200d\ud83d\udd25\ufe0f\u200d\ud83d\udd25",
+    "video_title": "Clean, Analyze, Visualize And Perform EDA With Klib Library In No Time ️‍🔥️‍🔥️‍🔥️‍🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=h0AYbLGRa2I",
-    "video_title": "300+ Solved Interview Questions And Answer For Big Data Engineering\ufe0f\u200d\ud83d\udd25\ufe0f\u200d\ud83d\udd25\ufe0f\u200d\ud83d\udd25\ufe0f\u200d\ud83d\udd25",
+    "video_title": "300+ Solved Interview Questions And Answer For Big Data Engineering️‍🔥️‍🔥️‍🔥️‍🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=pv2KlvgaDc8",
-    "video_title": "Reality Of Job Description\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02",
+    "video_title": "Reality Of Job Description😂😂😂😂",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -5797,7 +5797,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=lVO9_BSfqAw",
-    "video_title": "If You Are Losing Motivation While Learning Data Science- Hear This Story Out\ufe0f\u200d\ud83d\udd25\ufe0f\u200d\ud83d\udd25\ufe0f\u200d\ud83d\udd25\ufe0f\u200d\ud83d\udd25\ufe0f\u200d\ud83d\udd25",
+    "video_title": "If You Are Losing Motivation While Learning Data Science- Hear This Story Out️‍🔥️‍🔥️‍🔥️‍🔥️‍🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -5839,7 +5839,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=Vo2zPqyFr6c",
-    "video_title": "250+ Data Science Interview Questions- Just Prepare Before The Interview\ud83d\udd25 \ud83d\udd25 \ud83d\udd25 \ud83d\udd25",
+    "video_title": "250+ Data Science Interview Questions- Just Prepare Before The Interview🔥 🔥 🔥 🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -5867,7 +5867,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=otLmusUe64g",
-    "video_title": "All My Passive Income From Starting Of My Career- Necessity Is The Mother Of My Passive Income\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02",
+    "video_title": "All My Passive Income From Starting Of My Career- Necessity Is The Mother Of My Passive Income😂😂😂😂",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -5916,7 +5916,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=fAbnPRBXwVc",
-    "video_title": "2nd Tier And 3rd Tier Colleges To Data Scientist Or Data Analyst Role- Yes It Is Possible\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "2nd Tier And 3rd Tier Colleges To Data Scientist Or Data Analyst Role- Yes It Is Possible🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -5965,7 +5965,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=aFu788EydFU",
-    "video_title": "Acer Predator Helios 300 With Nvidia RTX 3060  Deep learning Benchmarking, Get The Speed You Want\ud83d\ude0e\ud83c\udf89\ud83d\ude0e",
+    "video_title": "Acer Predator Helios 300 With Nvidia RTX 3060  Deep learning Benchmarking, Get The Speed You Want😎🎉😎",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6091,7 +6091,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=bZnGOoi18PA",
-    "video_title": "Crab Mentality- Stay Away From These Kind Of People\ud83e\udd80\ud83e\udd80\ud83e\udd80\ud83e\udd80",
+    "video_title": "Crab Mentality- Stay Away From These Kind Of People🦀🦀🦀🦀",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6126,14 +6126,14 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=03vaBiyzpjc",
-    "video_title": "Making Money As A Data Scientist- How I Doubled My Income\ud83d\udcb2 \ud83d\udcb2 \ud83d\udcb2 \ud83d\udcb2",
+    "video_title": "Making Money As A Data Scientist- How I Doubled My Income💲 💲 💲 💲",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=ieX2CxsUwDY",
-    "video_title": "BlockChain,Cloud,Devops,Data Science, Big Data, Cybersecurity- Which Technology To Select?\ud83d\ude30\ud83d\ude30\ud83d\ude30\ud83d\ude30\ud83d\ude30",
+    "video_title": "BlockChain,Cloud,Devops,Data Science, Big Data, Cybersecurity- Which Technology To Select?😰😰😰😰😰",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6168,21 +6168,21 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=6EWpEb9OVQ8",
-    "video_title": "Privacy Issues With Github Copilot\ud83d\ude32\ud83d\ude32\ud83d\ude32\ud83d\ude32",
+    "video_title": "Privacy Issues With Github Copilot😲😲😲😲",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=XpuW1eR42Cw",
-    "video_title": "Minimum Laptop Configuration To Start With Machine Learning And Deep Learning\ud83d\udcbb\ud83d\udcbb\ud83d\udcbb\ud83d\udcbb\ud83d\udcbb\ud83d\udcbb",
+    "video_title": "Minimum Laptop Configuration To Start With Machine Learning And Deep Learning💻💻💻💻💻💻",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=zqetEagIR58",
-    "video_title": "Generate Python Faster with Mito\u2b50 \u2b50 \u2b50 \u2b50",
+    "video_title": "Generate Python Faster with Mito⭐ ⭐ ⭐ ⭐",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6196,7 +6196,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=gKirlKcVbbU",
-    "video_title": "Companies To Apply For Data Scientist And ML And DL Roles in 2021- Dont Wait-Just Apply\u270c \u270c \u270c \u270c \u270c \u270c",
+    "video_title": "Companies To Apply For Data Scientist And ML And DL Roles in 2021- Dont Wait-Just Apply✌ ✌ ✌ ✌ ✌ ✌",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6217,28 +6217,28 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=Nw7mRAZj_VA",
-    "video_title": "Sharing Devavrat Experience Of Working In Nvidia As Intern \u2b50\u2b50\u2b50\u2b50",
+    "video_title": "Sharing Devavrat Experience Of Working In Nvidia As Intern ⭐⭐⭐⭐",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=m0OEHRA1Kfs",
-    "video_title": "Writing Machine Learning Pipelines And Deep Learning Code Using Github Copilot \u2b50\u2b50\u2b50\u2b50\u2b50\u2b50",
+    "video_title": "Writing Machine Learning Pipelines And Deep Learning Code Using Github Copilot ⭐⭐⭐⭐⭐⭐",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=qswDPjMUaR8",
-    "video_title": "First Time Using Github Copilot- How To Do Coding Using 1 Finger\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02",
+    "video_title": "First Time Using Github Copilot- How To Do Coding Using 1 Finger😂😂😂😂😂",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=kSRarmKmBrI",
-    "video_title": "Breakthrough Announcement- Github Copilot- Your AI Pair Programmer- Saviour For Developers\ud83d\ude4c\ud83d\ude4c\ud83d\ude4c\ud83d\ude4c\ud83d\ude4c\ud83d\ude4c\ud83d\ude4c",
+    "video_title": "Breakthrough Announcement- Github Copilot- Your AI Pair Programmer- Saviour For Developers🙌🙌🙌🙌🙌🙌🙌",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6252,7 +6252,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=tSnE6EuCLe0",
-    "video_title": "Follow This Statergy To Increase Your Salary Hike In Job Interviews- Learn This Art\ud83d\udcb2 \ud83d\udcb2 \ud83d\udcb2 \ud83d\udcb2 \ud83d\udcb2 \ud83d\udcb2",
+    "video_title": "Follow This Statergy To Increase Your Salary Hike In Job Interviews- Learn This Art💲 💲 💲 💲 💲 💲",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6287,7 +6287,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=gYsU2VTESE8",
-    "video_title": "How Data Science Projects Are Implemented Using Agile Methodology\ud83e\udd14 \ud83e\udd14 \ud83e\udd14 \ud83e\udd14 \ud83e\udd14 \ud83e\udd14 \ud83e\udd14",
+    "video_title": "How Data Science Projects Are Implemented Using Agile Methodology🤔 🤔 🤔 🤔 🤔 🤔 🤔",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6301,7 +6301,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=fSJ4uUlHRGM",
-    "video_title": "How A Support Engineer Applied ML Knowledge In His Domain And Cracked Data Science Job \ud83d\udc68\u200d\ud83d\udd2c\ud83d\udc68\u200d\ud83d\udd2c\ud83d\udc68\u200d\ud83d\udd2c\ud83d\udc68\u200d\ud83d\udd2c",
+    "video_title": "How A Support Engineer Applied ML Knowledge In His Domain And Cracked Data Science Job 👨‍🔬👨‍🔬👨‍🔬👨‍🔬",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6378,7 +6378,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=E88Byz7cgFw",
-    "video_title": "Common Doubts,Questions And Fear After Getting Data Science Job- Must For EveryOne\ud83d\ude15\ud83d\ude15\ud83d\ude15\ud83d\ude15",
+    "video_title": "Common Doubts,Questions And Fear After Getting Data Science Job- Must For EveryOne😕😕😕😕",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6567,7 +6567,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=sAE9cbYJ3s8",
-    "video_title": "Machine Learning Interview Series With Solution #6-Asked In Interview \u2b50 \u2b50\u2b50\u2b50\u2b50\u2b50\u2b50\u2b50",
+    "video_title": "Machine Learning Interview Series With Solution #6-Asked In Interview ⭐ ⭐⭐⭐⭐⭐⭐⭐",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6581,14 +6581,14 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=caOfjMb-7-0",
-    "video_title": "Machine Learning Interview Series #5-Asked In Interview \u2b50 \u2b50\u2b50\u2b50\u2b50\u2b50\u2b50\u2b50",
+    "video_title": "Machine Learning Interview Series #5-Asked In Interview ⭐ ⭐⭐⭐⭐⭐⭐⭐",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=YbUzFAN740M",
-    "video_title": "Deep Learning Computer Vision Interview Series #4-Asked In Interview \u2b50 \u2b50\u2b50\u2b50\u2b50\u2b50\u2b50\u2b50",
+    "video_title": "Deep Learning Computer Vision Interview Series #4-Asked In Interview ⭐ ⭐⭐⭐⭐⭐⭐⭐",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6602,7 +6602,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=cB3ycWAaznA",
-    "video_title": "Linear Algebra-What is Scalar and Vectors And Its Practical Applications In Machine Learning? \u2b50\u2b50\u2b50\u2b50\u2b50\u2b50",
+    "video_title": "Linear Algebra-What is Scalar and Vectors And Its Practical Applications In Machine Learning? ⭐⭐⭐⭐⭐⭐",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6735,14 +6735,14 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=V1-Hm2rNkik",
-    "video_title": "Tutorial 2- Fine Tuning Pretrained Model On Custom Dataset Using \ud83e\udd17 Transformer",
+    "video_title": "Tutorial 2- Fine Tuning Pretrained Model On Custom Dataset Using 🤗 Transformer",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=UvatEJ2zWDM",
-    "video_title": "Bitcoin Market Crash Analyzing As A Data Scientist Part 1-\u20bf\u20bf\u20bf\u20bf\u20bf\u20bf",
+    "video_title": "Bitcoin Market Crash Analyzing As A Data Scientist Part 1-₿₿₿₿₿₿",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6756,7 +6756,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=sKhhb6RGv1c",
-    "video_title": "Introduction To Nvidia Rapids- cuDF,cuML Libraries- Run Anything In GPU\u2b50\u2b50\u2b50\u2b50\u2b50\u2b50",
+    "video_title": "Introduction To Nvidia Rapids- cuDF,cuML Libraries- Run Anything In GPU⭐⭐⭐⭐⭐⭐",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6854,7 +6854,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=YFNKnUhm_-s",
-    "video_title": "Why Deep Learning Is Becoming So Popular?\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "Why Deep Learning Is Becoming So Popular?🔥🔥🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -6868,7 +6868,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=iC92S3UVkAc",
-    "video_title": "50+ Successful Transition Stories To Data Science In 2 months- Ft Ineuron Team \u2728\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "50+ Successful Transition Stories To Data Science In 2 months- Ft Ineuron Team ✨🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -7386,7 +7386,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=_abVdahcFl8",
-    "video_title": "How To Revise Data Science  Concepts And Algorithms Efficiently Before Interviews-Most Important\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "How To Revise Data Science  Concepts And Algorithms Efficiently Before Interviews-Most Important🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -7869,7 +7869,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=WrRJdYOcPGw",
-    "video_title": "Important Guidelines For Placements For Fresher\u2019s And College Students",
+    "video_title": "Important Guidelines For Placements For Fresher’s And College Students",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -7960,7 +7960,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=1XccsgvoajU",
-    "video_title": "Which Is Best Programming Language For Data Structures And Algorithms?\ud83d\ude1c\ud83d\ude1c\ud83d\ude1c",
+    "video_title": "Which Is Best Programming Language For Data Structures And Algorithms?😜😜😜",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -8156,7 +8156,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=4-kDCP0Bor0",
-    "video_title": "Negotiating Salaries With HR for Any Job Is An Art. Learn IT Before It's Late \ud83d\ude2d\ud83d\ude2d\ud83d\ude2d\ud83d\ude2d",
+    "video_title": "Negotiating Salaries With HR for Any Job Is An Art. Learn IT Before It's Late 😭😭😭😭",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -8464,7 +8464,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=b5F667g1yCk",
-    "video_title": "How To Deploy Machine Learning Models Using FastAPI-Deployment Of ML Models As API\u2019s",
+    "video_title": "How To Deploy Machine Learning Models Using FastAPI-Deployment Of ML Models As API’s",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -8478,7 +8478,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=cUi9gsxRjp0",
-    "video_title": "Designing Data Science Projects Architecture- AI Car Solution-Important For Interviews\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "Designing Data Science Projects Architecture- AI Car Solution-Important For Interviews🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -8688,7 +8688,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=w-_vmVfpssg",
-    "video_title": "Xgboost Regression In-Depth Intuition Explained- Machine Learning Algorithms \ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "Xgboost Regression In-Depth Intuition Explained- Machine Learning Algorithms 🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -8702,14 +8702,14 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=8gJ3p1h-QbM",
-    "video_title": "Interview Prep Day 6-How To Learn Machine Learning Algorithms For Interviews-Random Forest Algo\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "Interview Prep Day 6-How To Learn Machine Learning Algorithms For Interviews-Random Forest Algo🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=KlJe9h438_w",
-    "video_title": "How to Prepare For Deep Learning Interviews- Important Interview Questions in ANN-Part 1\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "How to Prepare For Deep Learning Interviews- Important Interview Questions in ANN-Part 1🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -8737,21 +8737,21 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=gPciUPwWJQQ",
-    "video_title": "Xgboost Classification Indepth Maths Intuition- Machine Learning Algorithms\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "Xgboost Classification Indepth Maths Intuition- Machine Learning Algorithms🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=tG2fMKyolQ8",
-    "video_title": "Hottest And Best Domains Where Data Scientist And Data Analyst Are Paid More Salaries \ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "Hottest And Best Domains Where Data Scientist And Data Analyst Are Paid More Salaries 🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=vRcW5LDB7ng",
-    "video_title": "Tutorial 1-What Is Reinforcement Machine Learning? \ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "Tutorial 1-What Is Reinforcement Machine Learning? 🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -8765,7 +8765,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=MDKkbIymmLk",
-    "video_title": "Interview Prep Day 5-How To Learn Machine Learning Algorithms For Interviews- Logistic Regression\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "Interview Prep Day 5-How To Learn Machine Learning Algorithms For Interviews- Logistic Regression🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -8786,7 +8786,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=T4y25jc5NyM",
-    "video_title": "Tutorial 1-Machine Learning Model Retraining Approach-Incremental And Continuous Model Training \ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "Tutorial 1-Machine Learning Model Retraining Approach-Incremental And Continuous Model Training 🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -8807,14 +8807,14 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=9jA0KjS7V_c",
-    "video_title": "Complete Road Map To Prepare For Deep Learning\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "Complete Road Map To Prepare For Deep Learning🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=xSXGcuiEzUc",
-    "video_title": "D-Tale The Best Library To Perform Exploratory Data Analysis Using Single Line Of Code\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "D-Tale The Best Library To Perform Exploratory Data Analysis Using Single Line Of Code🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -8828,42 +8828,42 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=hLDDt_XUeMA",
-    "video_title": "Pandas Visual Analysis- Perform Exploratory Data Analysis In A Single Line Of Code\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "Pandas Visual Analysis- Perform Exploratory Data Analysis In A Single Line Of Code🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=SCMSBGY4l50",
-    "video_title": "Data Science Myths Vs Reality Explained- Sharing My Experience- Must Watch For Everyone\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "Data Science Myths Vs Reality Explained- Sharing My Experience- Must Watch For Everyone🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=xoP4h09grBM",
-    "video_title": "Interview Prep Day 4-How To Learn Machine Learning Algorithms For Interviews- Decision Trees\ud83d\udd25\ud83d\udd25",
+    "video_title": "Interview Prep Day 4-How To Learn Machine Learning Algorithms For Interviews- Decision Trees🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=8fOv9JiH1jI",
-    "video_title": "How To Convert A Kaggle Project To A End To End Data Science With Deployment For Freshers \ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "How To Convert A Kaggle Project To A End To End Data Science With Deployment For Freshers 🔥🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=fM4qTMfCoak",
-    "video_title": "Complete Road Map To Prepare NLP-Follow This Video-You Will Able to Crack Any DS Interviews\ud83d\udd25\ud83d\udd25",
+    "video_title": "Complete Road Map To Prepare NLP-Follow This Video-You Will Able to Crack Any DS Interviews🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=UJfAZHb2VW0",
-    "video_title": "Data Science Live Q&A- Ask Any Queries Related To Data Science Interviews\ud83d\udd25\ud83d\udd25",
+    "video_title": "Data Science Live Q&A- Ask Any Queries Related To Data Science Interviews🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -8877,14 +8877,14 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=eYRBWM9Mvuc",
-    "video_title": "Interview Prep Day3-How To Prepare Support Vector Machines Important Questions In Interviews\ud83d\udd25\ud83d\udd25",
+    "video_title": "Interview Prep Day3-How To Prepare Support Vector Machines Important Questions In Interviews🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=eh-muwX6qbQ",
-    "video_title": "Interview Prep Day 2- Linear Regression Interview Question-The Most Important Algorithm In ML & DS\ud83d\udd25\ud83d\udd25",
+    "video_title": "Interview Prep Day 2- Linear Regression Interview Question-The Most Important Algorithm In ML & DS🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -8905,7 +8905,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=FNfBR7ZnyWo",
-    "video_title": "Top 5 Data Science Projects/Ideas For Your Resume For Freshers From My Playlist- Must Watch\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+    "video_title": "Top 5 Data Science Projects/Ideas For Your Resume For Freshers From My Playlist- Must Watch🔥🔥🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
@@ -9248,7 +9248,7 @@
   },
   {
     "video_url": "https://www.youtube.com/watch?v=qxPWdaOOnHg",
-    "video_title": "Finally Built My Deep Learning And Gaming Workstation With Nvidia Titan RTX GPU \ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25- It's A Beast\ud83d\udd25",
+    "video_title": "Finally Built My Deep Learning And Gaming Workstation With Nvidia Titan RTX GPU 🔥🔥🔥🔥🔥- It's A Beast🔥",
     "video_transcript_file": null,
     "video_images_content": null,
     "article_written": null
