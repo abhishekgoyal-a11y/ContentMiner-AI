@@ -191,21 +191,21 @@
   {
     "video_url": "https://www.youtube.com/watch?v=7QisFjITGlI",
     "video_title": "Learn Snowflake with ONE Project",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/7QisFjITGlI.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=LHKhYH0xDSg",
     "video_title": "How to Build an AI Agent That Interacts With All Your Data Sources",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/LHKhYH0xDSg.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=h7h-ShDI3-Y",
     "video_title": "I Just Replaced Lovable With This New AI Tool...",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/h7h-ShDI3-Y.txt",
     "video_images_content": null,
     "article_written": null
   },
