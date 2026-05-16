@@ -401,9 +401,9 @@
   {
     "video_url": "https://www.youtube.com/watch?v=V-lI7AmusGs",
     "video_title": "Go Programming - Full Course",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/V-lI7AmusGs.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=-VTiqivKOB8",
@@ -494,63 +494,63 @@
     "video_title": "The Only Programming Languages Worth Learning in 2026",
     "video_transcript_file": "transcripts/zsPD9aohymw.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=1wK7Yvevfcs",
     "video_title": "Ex-Microsoft Engineer Explains How To Prep For Coding Interviews",
     "video_transcript_file": "transcripts/1wK7Yvevfcs.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=zI5ducyfyNc",
     "video_title": "Learn NumPy in 40 Minutes - Python NumPy Tutorial",
     "video_transcript_file": "transcripts/zI5ducyfyNc.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=lhaGyrp1vfY",
     "video_title": "Lovable vs MeDo, which AI app builder actually works?",
     "video_transcript_file": "transcripts/lhaGyrp1vfY.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=YG6odi6VY9g",
     "video_title": "Interview Coder Just Leaked Users’ Full Names and Where They Got Offers",
     "video_transcript_file": "transcripts/YG6odi6VY9g.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=_SgRXhguJRM",
     "video_title": "Django FULL Project Build - YouTube Clone | ImageKit, Authentication, Uploads, & More...",
     "video_transcript_file": "transcripts/_SgRXhguJRM.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=i4VKHExk9fs",
     "video_title": "I Asked an Uber Tech recruiter if CS Grads are Cooked...",
     "video_transcript_file": "transcripts/i4VKHExk9fs.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=BvsBJynm64k",
     "video_title": "FastAPI + React B2B SaaS Full Project Build - Orgs, Users, Billing, Roles & More...",
     "video_transcript_file": "transcripts/BvsBJynm64k.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=Xnbef8F_Yfc",
     "video_title": "Master Python Requests In 15 Minutes. Call Any API",
     "video_transcript_file": "transcripts/Xnbef8F_Yfc.txt",
     "video_images_content": null,
-    "article_written": null
+    "article_written": true
   },
   {
     "video_url": "https://www.youtube.com/watch?v=km5-0jhv0JI",
@@ -681,147 +681,147 @@
   {
     "video_url": "https://www.youtube.com/watch?v=KUPceyLgzeU",
     "video_title": "7 Python Anti Patterns to Avoid",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/KUPceyLgzeU.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=WPBXvDS-UEo",
     "video_title": "Is This the Fastest App Build Ever? (Base44 Demo)",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/WPBXvDS-UEo.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=g93XqSRxcAs",
     "video_title": "OpenAI’s New Agent Builder is Insane - Full Tutorial",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/g93XqSRxcAs.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=cliZ-VzQxkE",
     "video_title": "I Let 3 AIs Compete to Build the Same App…",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/cliZ-VzQxkE.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=SR5NYCdzKkc",
     "video_title": "Learn Fast API With This ONE Project",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/SR5NYCdzKkc.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=e0FvoOtdAQc",
     "video_title": "3 Unique Python Features You NEED To Know",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/e0FvoOtdAQc.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=gaGaPpnexxA",
     "video_title": "Build a Python AI Agent in 10 Minutes",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/gaGaPpnexxA.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=8BBHhLioIus",
     "video_title": "What Programming Language to Learn in 2025 and WHY",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/8BBHhLioIus.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=_tstIX-cLeQ",
     "video_title": "I Can Spot a Weak Candidate in 10 Seconds - Here’s How",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/_tstIX-cLeQ.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=lINdySGmi3Y",
     "video_title": "Lovable for WordPress? The First AI WordPress Builder is Here",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/lINdySGmi3Y.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=-9lgUiD2J-Y",
     "video_title": "The Ultimate Database Roadmap (SQL to NoSQL and Beyond)",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/-9lgUiD2J-Y.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=qU3Rc6_B9es",
     "video_title": "How to Write Production Python Code",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/qU3Rc6_B9es.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=VLx9x_qOcGs",
     "video_title": "ULTIMATE AI Coding Tutorial with Warp Code",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/VLx9x_qOcGs.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=KjkFed4B5r8",
     "video_title": "My top 5 python programming course recommendations",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/KjkFed4B5r8.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=eOuCaQtlql8",
     "video_title": "How I Would Learn Python Web Development If I Started Over",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/eOuCaQtlql8.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=OKwDzKY_WN8",
     "video_title": "How to Build AI Agents in Python",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/OKwDzKY_WN8.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=richIuZJ3WY",
     "video_title": "Why 1M People Tried This AI Coding Tool (Full Vibe Coding Tutorial)",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/richIuZJ3WY.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=6dz3MD3ZXXk",
     "video_title": "Cancel Your AI subscriptions | This All-in-one AI is All You Need (ChatLLM Review)",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/6dz3MD3ZXXk.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=Wif4zLlruqo",
     "video_title": "Python Web Scraping: A Million Dollar Project Idea - FULL Build/Tutorial",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/Wif4zLlruqo.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=nokdEcqKWtA",
     "video_title": "The Truth About the Software Engineering Job Market in 2025",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/nokdEcqKWtA.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=zt_R6zIbz2s",
     "video_title": "What the $100k H1B Visa Means for Software Engineers",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/zt_R6zIbz2s.txt",
     "video_images_content": null,
     "article_written": null
   },
