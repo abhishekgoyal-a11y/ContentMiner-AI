@@ -828,28 +828,28 @@
   {
     "video_url": "https://www.youtube.com/watch?v=AUQJ9eeP-Ls",
     "video_title": "How to Build a Production-Ready RAG AI Agent in Python (Step-by-Step)",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/AUQJ9eeP-Ls.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=6JDVxu5_npc",
     "video_title": "Insane AI Tool Lets Me Code 3x Faster (Wispr Flow Walkthrough)",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/6JDVxu5_npc.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=YESrXVkcCHY",
     "video_title": "The Best AI Coding Tools for Developers in 2025 (That I Actually Use)",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/YESrXVkcCHY.txt",
     "video_images_content": null,
     "article_written": null
   },
   {
     "video_url": "https://www.youtube.com/watch?v=d_LbQwoWI7I",
     "video_title": "AI Engineering: A Realistic Roadmap for Beginners",
-    "video_transcript_file": null,
+    "video_transcript_file": "transcripts/d_LbQwoWI7I.txt",
     "video_images_content": null,
     "article_written": null
   },
